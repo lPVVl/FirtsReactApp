@@ -5,9 +5,11 @@ import "./employers-list.css";
 const EmployersList = ({data}) => {
 // свойство компонентов. перебор объекта чере мап возвращает массив с данными
 
+
     const elements = data.map(item => {
+        const {id, ...itemProprs} = item;
         return (
-            <EmployersListItem {...item}/>
+            <EmployersListItem key={id}  {...itemProprs}/>
         )
     })
 
